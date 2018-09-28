@@ -1,5 +1,4 @@
 /**
- * Clips.js
  * 剪贴板
  * 
  * 由 JSBox 自带 demo 改进
