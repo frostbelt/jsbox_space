@@ -3,7 +3,7 @@
  * @Author: caowenbin 
  * @Date: 2020-06-09 10:28:38 
  * @Last Modified by: caowenbin
- * @Last Modified time: 2020-06-09 16:50:10
+ * @Last Modified time: 2020-06-09 17:36:45
  */
 const height_item = 42;     // 查询条件，一行
 const height_input = 32;    // 输入框
@@ -59,13 +59,9 @@ const Helper = {
 
 // 查询条件 区别于 ALog
 let search = {
-  m2 : "",                        // APP 内用户 m2
-  qid : "",                       // APP 内用户 qid
   duration : String(3 / 24),      // 时间段(天) 从指定时间(默认当前)倒推多长时间(默认3小时)
-  url : "",                       // 页面 url
-  du : "",                        // url pathname
-  dua : "",                       // url host
   line : String(5),               // page size, 默认 5
+  url : "",                       // 页面 url
   phone : "",                     // 手机号
   key : "",                       // 打点参数
   action : "",                    // 打点参数
@@ -73,6 +69,8 @@ let search = {
   refer : "",                     // 打点参数
   ext : "",                       // 打点参数
   vid : "",                       // 打点参数
+
+  // ua : "",                        // useragent
 }
 
 let renderData = {
