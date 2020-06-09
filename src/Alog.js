@@ -3,7 +3,7 @@
  * @Author: caowenbin 
  * @Date: 2020-06-09 10:28:38 
  * @Last Modified by: caowenbin
- * @Last Modified time: 2020-06-09 16:50:05
+ * @Last Modified time: 2020-06-09 16:55:44
  */
 const height_item = 42;     // 查询条件，一行
 const height_input = 32;    // 输入框
@@ -163,7 +163,7 @@ renderData.views.push({
           _data.forEach(item => {
             item = {...item};
             // 排序
-            ["time", "du", "m2", "c"].forEach(key => {
+            ["time", "du", "c"].forEach(key => {
               list.push(key + ": " + item[key]);
               delete(item[key]);
             });
