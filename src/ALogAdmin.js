@@ -3,7 +3,7 @@
  * @Author: caowenbin 
  * @Date: 2020-06-09 10:28:38 
  * @Last Modified by: caowenbin
- * @Last Modified time: 2020-06-09 17:36:45
+ * @Last Modified time: 2020-06-09 17:38:33
  */
 const height_item = 42;     // 查询条件，一行
 const height_input = 32;    // 输入框
@@ -156,7 +156,7 @@ renderData.views.push({
           _data.forEach(item => {
             item = {...item};
             // 排序 区别于 ALog
-            ["time", "du", "phone", "key"].forEach(key => {
+            ["time", "phone", "key"].forEach(key => {
               list.push(key + ": " + item[key]);
               delete(item[key]);
             });
