@@ -2,7 +2,7 @@
  * @Author: caowenbin 
  * @Date: 2020-06-09 10:28:38 
  * @Last Modified by: caowenbin
- * @Last Modified time: 2020-06-09 14:28:38
+ * @Last Modified time: 2020-06-09 15:07:13
  */
 const height_item = 42;     // 查询条件，一行
 const height_input = 32;    // 输入框
@@ -61,6 +61,46 @@ let renderData = {
       layout: function(make, view) {
         make.left.right.inset(width_sep);
         make.top.equalTo(Object.keys(search).length * height_item + width_sep);
+      },
+      events: {
+        tapped: function(sender) {
+          $http.get({
+            url: "https://www.fastmock.site/mock/b4a46c87101afae11fcf7ef792ddfe90/alog/getData",
+            handler: function(resp) {
+              // test
+              // console.log("get", resp);
+
+              let res = resp.data;
+
+              // test
+              // console.log(typeof res, res);
+
+              if(!res || res.errno != 0){
+                $ui.toast(res && res.errmsg || '请求报错');
+                return;
+              }
+
+              let _data = res.data;
+              let list = [];
+              _data.forEach(item => {
+                item = {...item};
+                // 排序
+                ["time", "du", "c"].forEach(key => {
+                  list.push(key + ": " + item[key]);
+                  delete(item[key]);
+                });
+                // 其它
+                Object.keys(item).forEach(key => {
+                  list.push(key + ": " + item[key]);
+                });
+                list.push("");
+              });
+
+              $ui.toast('已复制' + _data.length + "条日志");
+              $clipboard.text = list.join("\n");
+            }
+          })
+        },
       },
     },
   ],
