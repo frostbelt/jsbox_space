@@ -3,7 +3,7 @@
  * @Author: caowenbin 
  * @Date: 2020-06-09 10:28:38 
  * @Last Modified by: caowenbin
- * @Last Modified time: 2020-06-09 16:57:46
+ * @Last Modified time: 2020-06-09 17:49:00
  */
 const height_item = 42;     // 查询条件，一行
 const height_input = 32;    // 输入框
@@ -85,9 +85,7 @@ let renderData = {
 	props: {
 		title: 'ALog',
   },
-  views : [
-    
-  ],
+  views : [],
 };
 
 // 查询条件
