@@ -1,9 +1,9 @@
 /*
- * ALog 前台日志
+ * ALog 后台日志
  * @Author: caowenbin 
  * @Date: 2020-06-09 10:28:38 
  * @Last Modified by: caowenbin
- * @Last Modified time: 2020-06-09 16:50:05
+ * @Last Modified time: 2020-06-09 16:50:10
  */
 const height_item = 42;     // 查询条件，一行
 const height_input = 32;    // 输入框
@@ -57,7 +57,7 @@ const Helper = {
 }
 
 
-// 查询条件
+// 查询条件 区别于 ALog
 let search = {
   m2 : "",                        // APP 内用户 m2
   qid : "",                       // APP 内用户 qid
@@ -66,19 +66,13 @@ let search = {
   du : "",                        // url pathname
   dua : "",                       // url host
   line : String(5),               // page size, 默认 5
-  bid : "",                       // monitor 打点参数
-  c : "",                         // monitor 打点参数
-  channel_id : "",                // monitor 打点参数
-  cid : "",                       // monitor 打点参数
-  dl : "",                        // monitor 打点参数
-  ext : "",                       // monitor 打点参数
-  vid : "",                       // monitor 打点参数
-
-  // h5mid : "",                     // APP 外用户标识
-  // totime : "",                    // 指定时间(默认当前)，格式 "2020-06-09"
-  // ua : "",                        // useragent
-  // offset : "",                    // 从第几条开始
-  // reverse : "true",               // 是否逆序输出(默认逆序)
+  phone : "",                     // 手机号
+  key : "",                       // 打点参数
+  action : "",                    // 打点参数
+  label : "",                     // 打点参数
+  refer : "",                     // 打点参数
+  ext : "",                       // 打点参数
+  vid : "",                       // 打点参数
 }
 
 let renderData = {
@@ -145,7 +139,8 @@ renderData.views.push({
         url: "http://alog.frostbelt.cn/getData?" + Helper.param({
           ...search,
           ...{
-            logstore : "tubebrowser",
+            // 区别于 ALog
+            logstore : "tubeadmin",
             t : now,
             s : Helper.getSign(now),
           },
@@ -162,8 +157,8 @@ renderData.views.push({
           let list = [];
           _data.forEach(item => {
             item = {...item};
-            // 排序
-            ["time", "du", "m2", "c"].forEach(key => {
+            // 排序 区别于 ALog
+            ["time", "du", "phone", "key"].forEach(key => {
               list.push(key + ": " + item[key]);
               delete(item[key]);
             });
