@@ -3,7 +3,7 @@
  * @Author: caowenbin 
  * @Date: 2020-06-09 10:28:38 
  * @Last Modified by: caowenbin
- * @Last Modified time: 2020-06-09 16:55:44
+ * @Last Modified time: 2020-06-09 16:57:46
  */
 const height_item = 42;     // 查询条件，一行
 const height_input = 32;    // 输入框
@@ -75,7 +75,7 @@ let search = {
   vid : "",                       // monitor 打点参数
 
   // h5mid : "",                     // APP 外用户标识
-  // totime : "",                    // 指定时间(默认当前)，格式 "2020-06-09"
+  // totime : "",                    // 指定时间(默认当前)，格式 "yyyy-MM-dd hh:mm:ss"
   // ua : "",                        // useragent
   // offset : "",                    // 从第几条开始
   // reverse : "true",               // 是否逆序输出(默认逆序)
