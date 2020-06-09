@@ -2,7 +2,7 @@
  * @Author: caowenbin 
  * @Date: 2020-06-09 10:28:38 
  * @Last Modified by: caowenbin
- * @Last Modified time: 2020-06-09 11:27:20
+ * @Last Modified time: 2020-06-09 11:35:41
  */
 const height_head = 50;     // 标题
 const height_item = 60;     // 查询条件，一行
@@ -71,9 +71,8 @@ $ui.render({
             {
               type: "input",
               props: {
-                type: $kbType.search,
-                darkKeyboard: true,
                 text: search.m2,
+                placeholder: "m2",
               },
               layout: function(make, view) {
                 make.width.equalTo(300);
@@ -81,11 +80,13 @@ $ui.render({
                 make.top.equalTo((height_item - height_input) / 2);
                 make.left.equalTo(width_label + width_sep * 2);
               },
-              changed: function(sender) {
-                // test
-                console.log(sender);
-
-                search.m2 = sender;
+              events : {
+                changed: function(sender) {
+                  // test
+                  console.log(sender);
+  
+                  search.m2 = sender;
+                },
               },
             },
           ],
